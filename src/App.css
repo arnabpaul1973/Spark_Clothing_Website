@@ -1,38 +1,89 @@
-.App {
+/* Navbar */
+
+.navbar-wrapper {
+  background-color: #588157;
+}
+
+/* Home Page */
+.home-wrapper {
+  padding: 25px;
+  background-color: #a3b18a;
+  border-radius: 15px;
+}
+
+/* About Us Image */
+.about-us-img{
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: block;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  margin: auto;
+}
+
+/* Bootstrap Cards */
+.card{
+  width: 350px;
+  height: 500px;
+  padding: 30px;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.card-img-top{
+  height: 300px;
+}
+
+
+/* Contact Us Page */
+
+label {
+  padding: 10px;
+}
+
+input{
+  border-radius: 5px;
+}
+
+.contact-wrapper{
+  padding: 20px;
+  border: solid 1px black;
+  background-color: #588157;
   color: white;
+  border-radius: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.form-container{
+  padding: 10px 0;
+  text-align: center;
+  background-color: #a3b18a;
+  border: solid 1px black;
+  border-radius: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* About Us page */
+
+.about-us-wrapper{
+  border-radius: 10px;
+  padding: 20px;
+}
+
+/* Product Page */
+
+.product-wrapper{
+  background-color: #3a5a40;
+  border-radius: 10px;
+}
+
+/* Contact Us Flexbox */
+
+.flex-container {
+  display: flex;
+}
+
+.flex-container > div {
+  margin: 10px;
+  padding: 10px;
+  width: 30%;
+  text-align: center;
+  color: black;
 }
