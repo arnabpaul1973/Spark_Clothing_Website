@@ -1,31 +1,57 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import axios from "axios";
+import { fetchApi } from "../../../../utils/fetchApi";
+import ProductsModal from "../ProductsModal/ProductsModal";
 
 const ProductDetails = () => {
 
   let { productId } = useParams();
 
   const [data, setData] = useState([]);
-
   const [feedbackData, setFeedbackData] = useState([]);
+  const [modalShow, setModalShow] = useState(null);
+  const [isError, setIsError] = useState(false);
+
+  // useEffect(() => {
+  //   axios.get(`http://localhost:3000/data?id=${productId}`).then((res) => {
+  //     setData(res.data[0]);
+  //   })
+  //   axios.get(`http://localhost:3000/feedback?productId=${productId}`).then((res) => {
+  //     setFeedbackData(res.data[0]);
+  //   })
+  // }, [productId]);
 
   useEffect(() => {
-    axios.get(`http://localhost:3000/data?id=${productId}`).then((res) => {
-      console.log(res);
-      setData(res.data[0]);
+    fetchApi(`http://localhost:3000/data?id=${productId}`)
+    .then((result) => {
+      console.log(result[0]);
+      setData(result[0]);
+    })
+    // .then((result) => {
+    //   setData(result[0]);
+    // })
+    .catch((err) => {
+      setIsError(true);
+    })
+
+    fetch(`http://localhost:3000/feedback?productId=${productId}`)
+    .then((res) => {
+      return res.json()
+    })
+    .then((result) => {
+      setFeedbackData(result[0]);
+    })
+    .catch((err) => {
+      setIsError(true);
     })
   }, [productId]);
 
-  useEffect(() => {
-    axios.get(`http://localhost:3000/feedback?id=${productId}`).then((re) => {
-      console.log(re);
-      setFeedbackData(re.data[0]);
-    })
-  }, [productId]);
+  if (isError) {
+    return (<div className="alert alert-danger">Some Error Occured! Please Try again later.</div>)
+  }
 
   return(
-    <div className="text-center">
+    <div>
       <h1>Product Details</h1>
       <div className="card">
         <img className="card-img-top" src={data.img} alt="Card image cap" />
@@ -36,12 +62,14 @@ const ProductDetails = () => {
         {feedbackData && <ul className="list-group list-group-flush">
           <li className="list-group-item">Feedback : {feedbackData.comment}</li>
           <li className="list-group-item">Given By : {feedbackData.name}</li>
+          <li className="list-group-item">Rating : {feedbackData.rate} stars</li>
         </ul>}
+        <button className="btn btn-primary" onClick={() => setModalShow(data.id)}>Feedback</button>
       </div>
-      {/* <h2>{productId}</h2>
-      <h3>{data.category}</h3>
-      <img src={data.img} alt="Card image cap" />
-      <h2>{feedbachData.comment}</h2> */}
+      {modalShow && <ProductsModal
+        show={modalShow}
+        onHide={() => setModalShow(null)}
+        productId={modalShow} />}
     </div>
   )
 }

@@ -46,17 +46,17 @@
       "id": 1
     },
     {
-      "name": "erty",
-      "email": "erty@g.com",
-      "phone": "4567890",
-      "message": "Goodm",
+      "name": "adfg",
+      "email": "a@gmail.com",
+      "phone": "3214567890",
+      "message": "asdfgh",
       "id": 2
     },
     {
-      "name": "Utkarsh",
-      "email": "utk@vahoo.com",
-      "phone": "9005093218",
-      "message": "Good night",
+      "name": "asdf",
+      "email": "a@gmail.com",
+      "phone": "123456",
+      "message": "asdfghj",
       "id": 3
     }
   ],
@@ -67,7 +67,7 @@
       "img": "/Assets/images/mensImg1.png",
       "category": "men",
       "originalPrice": "1999",
-      "discount": "10%",
+      "discount": "10",
       "reducedPrice": "1799"
     },
     {
@@ -75,18 +75,18 @@
       "title": "Nike Top",
       "img": "/Assets/images/womensImg1.png",
       "category": "women",
-      "originalPrice": "1999",
+      "originalPrice": "2999",
       "discount": "10%",
-      "reducedPrice": "1799"
+      "reducedPrice": "2799"
     },
     {
       "id": 3,
       "title": "Bunchumps",
       "img": "/Assets/images/kidsImg1.png",
       "category": "kid",
-      "originalPrice": "1999",
+      "originalPrice": "999",
       "discount": "10%",
-      "reducedPrice": "1799"
+      "reducedPrice": "899"
     },
     {
       "id": 4,
@@ -111,12 +111,20 @@
       "title": "Jacket",
       "img": "/Assets/images/kidsImg2.png",
       "category": "kid",
-      "originalPrice": "1999",
+      "originalPrice": "999",
       "discount": "10%",
-      "reducedPrice": "1799"
+      "reducedPrice": "899"
     }
   ],
   "feedback": [
-   
+    {
+      "name": "ad",
+      "email": "ad@v.com",
+      "phone": "34",
+      "comment": "H",
+      "rate": "3",
+      "productId": 2,
+      "id": 4
+    }
   ]
 }

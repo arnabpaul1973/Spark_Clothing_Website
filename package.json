@@ -19,6 +19,11 @@
   "devDependencies": {
     "react-test-renderer": "^17.0.2"
   },
+  "jest": {
+    "transformIgnorePatterns": [
+      "/node_modules/(?!(axios)/)"
+    ]
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
